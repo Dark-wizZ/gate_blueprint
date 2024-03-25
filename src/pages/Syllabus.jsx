@@ -3,23 +3,24 @@ import { useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
 import { useNavigate } from "react-router-dom"
 import { auth } from "../firebase"
+import CSESyll from "../components/CSESyll"
 
-function Dashboard(props) { 
+function Syllabus(props) {
 
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext)
   const nav = useNavigate()
 
-  const signout = async(e) => {
-    try{
+  const signout = async (e) => {
+    try {
       await signOut(auth)
       console.log('logging out')
       nav('/')
-    }catch(error){
-      console.error('error signing out: ',error)
+    } catch (error) {
+      console.error('error signing out: ', error)
     }
   }
 
-  return currentUser && <div className="dashboard">
+  return currentUser && <div className="syllabus">
     <header>
       <nav class="navbar">
         <div class="navbar-left">
@@ -47,38 +48,19 @@ function Dashboard(props) {
       </div>
     </div>
 
-    <div class="container">
-      <div class="profile">
-        <div class="profile-data">
-          <h2>Profile Information</h2>
-          <div class="profile-info">
-            <p><strong>Name:</strong> {currentUser.displayName}</p>
-            <p><strong>Email:</strong> {currentUser.email}</p>
-          </div>
-        </div>
-
-        <div class="profile-progress">
-          <h2>Progress Report</h2>
-        </div>
+    <div className="content">
+      <div className="hero">
+        <div className="cse selected">Computer Science</div>
+        <div className="ce">Civil Engineering</div>
+        <div className="me">Mechanical Engineering</div>
+        <div className="ee">Electrical Engineering</div>
+        <div className="physics">Physics</div>
       </div>
-
-      <div class="material">
-        <h2>Study Materials</h2>
-        <div class="material-item">
-          <h3>Syllabus</h3>
-          <p>View the complete GATE syllabus</p>
-          <a href="#" onClick={()=>nav('/syllabus')}>View Syllabus</a>
+      <div className="data">
+        <div className="head">
+          Syllabus
         </div>
-        <div class="material-item">
-          <h3>Previous Questions</h3>
-          <p>Access previous year's GATE questions</p>
-          <a href="#">View Previous Questions</a>
-        </div>
-        <div class="material-item">
-          <h3>Mock Test</h3>
-          <p>Practice with mock tests for GATE preparation</p>
-          <a href="#">Take Mock Test</a>
-        </div>
+        <CSESyll />
       </div>
     </div>
     <footer>
@@ -100,4 +82,4 @@ function Dashboard(props) {
   </div>
 }
 
-export default Dashboard
+export default Syllabus

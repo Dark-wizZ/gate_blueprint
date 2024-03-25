@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import { AuthContextprovider } from './context/AuthContext'
 import Home from './pages/Home'
+import Syllabus from './pages/Syllabus'
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/syllabus' element={<Syllabus />} />
+
           </Routes>
         </BrowserRouter>
       </AuthContextprovider>

@@ -4,7 +4,8 @@ body {
   #root {
     // display:grid;
 
-    .home {
+
+    >.home {
       line-height: 1.6;
       background-color: #2d033b;
 
@@ -256,7 +257,9 @@ body {
 
     }
 
-    >.dashboard {
+
+    >.dashboard,
+    .syllabus {
       background: url("./assets/Gate.png") no-repeat center rgb(7, 15, 43);
       backdrop-filter: brightness(60%);
       color: rgb(255, 255, 255);
@@ -485,6 +488,72 @@ body {
         letter-spacing: 2px;
       }
     }
+
+    >.syllabus {
+      background: none;
+      background-color: rgb(7, 15, 43);
+
+      .content {
+        padding: 2% 5%;
+
+        .hero {
+          display: flex;
+          gap: 5px;
+          justify-content: space-between;
+          padding: 20px 0;
+          cursor: pointer;
+
+          div {
+            padding: 20px;
+            background: rgb(255, 255, 255, 0.3);
+            border: 1px solid #007bff;
+            border-radius: 7px;
+
+            &.selected{
+              color:#007bff;
+              border-width:3px;
+            }
+            &:hover{
+              color:#007bff;
+              border-width:3px;
+            }
+          }
+        }
+
+        .data {
+          .head {
+            color: #46ace7;
+            text-shadow: 1px 1px rgb(12, 40, 100);
+            font-size: 1.5em;
+          }
+
+          .syll {
+            padding: 2em;
+            display: grid;
+            gap: 1em;
+
+            .sec {
+              display: grid;
+              gap: 1em;
+              border: 1px solid white;
+              border-radius: 10px;
+              padding: 1em;
+
+              .title {
+                color: #46ace7;
+                text-shadow: 1px 1px rgb(12, 40, 100);
+                font-size: 1.3em;
+              }
+
+              .cont {
+                padding: 0 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+
   }
 
 }

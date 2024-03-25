@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom"
 import about from '../assets/about.png'
 import contact from '../assets/contact.jpg'
 import service from '../assets/service.jpeg'
-import logo from '../assets/Gate (2).png'
+import logo from '../assets/Gate2.png'
 import gb_img from '../assets/gb_img.webp'
 
 function Home(props) {
